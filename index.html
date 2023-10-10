@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+    <title>trillo &mdash; Your all-in-one booking app</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="img/logo.png" alt="trillo logo" class="logo" />
+        <form action="#" class="search">
+          <input
+            type="text"
+            class="search__input"
+            placeholder="Search hotels" />
+          <button class="search__btn">
+            <svg class="search__btn-icon">
+              <use xlink:href="img/sprite.svg#icon-search"></use>
+            </svg>
+          </button>
+        </form>
+        <div class="user">
+          <div class="user__icon-box">
+            <svg class="user__icon">
+              <use xlink:href="img/sprite.svg#icon-bookmark"></use>
+            </svg>
+            <span class="user__icon-notifaction">13</span>
+          </div>
+          <div class="user__icon-box">
+            <svg class="user__icon">
+              <use xlink:href="img/sprite.svg#icon-bubbles2"></use>
+            </svg>
+            <span class="user__icon-notifaction">5</span>
+          </div>
+          <div class="user__info-box">
+            <img src="img/user.jpg" alt="user of trillo" class="user-img" />
+
+            <p class="user-name">Khattab</p>
+          </div>
+        </div>
+      </header>
+      <div class="page-content">
+        <aside class="sidebar">
+          <nav class="sidebar__nav">
+            <ul class="nav__list">
+              <li class="nav__item active">
+                <a href="#" class="nav__item-a">
+                  <svg class="nav__icon">
+                    <use xlink:href="img/sprite.svg#icon-home"></use>
+                  </svg>
+                  <span>Hotel</span>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__item-a">
+                  <svg class="nav__icon">
+                    <use xlink:href="img/sprite.svg#icon-airplane"></use>
+                  </svg>
+                  <span>Flight</span>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__item-a">
+                  <svg class="nav__icon">
+                    <use xlink:href="img/sprite.svg#icon-key"></use>
+                  </svg>
+                  <span>car rental</span>
+                </a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__item-a">
+                  <svg class="nav__icon">
+                    <use xlink:href="img/sprite.svg#icon-map"></use>
+                  </svg>
+                  <span>Tours</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <p class="sidebar__text">
+            &copy; 2017 by trillo. All rights reserved
+          </p>
+        </aside>
+        <main class="main-content">
+          <div class="gallary">
+            <figure class="gallary__img">
+              <img src="img/hotel-1.jpg" alt="trillo hotel" />
+            </figure>
+            <figure class="gallary__img">
+              <img src="img/hotel-2.jpg" alt="trillo hotel" />
+            </figure>
+            <figure class="gallary__img">
+              <img src="img/hotel-3.jpg" alt="trillo hotel" />
+            </figure>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

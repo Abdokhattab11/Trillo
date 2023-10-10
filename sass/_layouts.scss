@@ -1,0 +1,24 @@
+.container {
+  margin: 8rem auto;
+  max-width: 120rem;
+  background-color: var(--gray-light-2);
+  box-shadow: 0 2rem 8rem var(--shadow-dark);
+}
+.header {
+  background-color: var(--gray-light-1);
+  height: 7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-content {
+  display: flex;
+  height: 100vh; // temporary
+}
+.sidebar {
+  flex: 0 0 18%;
+  background-color: var(--gray-dark-1);
+}
+.main-content {
+  flex: 1; // To take the remaning space of (18%)
+}
