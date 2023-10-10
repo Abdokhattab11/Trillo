@@ -35,10 +35,24 @@ body {
   color: var(--gray-dark-2);
   background: linear-gradient(to right bottom, var(--main-color-light), var(--main-color-dark)); }
 
+@keyframes btn-animate {
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.2); }
+  100% {
+    transform: scale(1);
+    box-shadow: none; } }
+
+.padding-bottom-med {
+  padding-bottom: 2rem; }
+
 .container {
   margin: 8rem auto;
   max-width: 120rem;
-  background-color: var(--gray-light-2);
+  background-color: var(--gray-light-1);
   box-shadow: 0 2rem 8rem var(--shadow-dark); }
 
 .header {
@@ -46,11 +60,11 @@ body {
   height: 7rem;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  border-bottom: 1px solid var(--gray-light-3); }
 
 .page-content {
-  display: flex;
-  height: 100vh; }
+  display: flex; }
 
 .sidebar {
   flex: 0 0 18%;
@@ -58,6 +72,11 @@ body {
 
 .main-content {
   flex: 1; }
+
+.hotel__details {
+  padding: 4.5rem;
+  display: flex;
+  gap: 4.5rem; }
 
 .logo {
   height: 3.5rem;
@@ -158,7 +177,7 @@ body {
     left: 0;
     top: 0;
     height: 100%;
-    width: 4px;
+    width: 5px;
     transform: scaleY(0);
     background-color: var(--main-color-med);
     transition: transform 0.2s, width 0.5s 0.2s, background 0.1s; }
@@ -194,10 +213,264 @@ body {
     font-size: 1.2rem; }
 
 .gallary {
-  display: flex; }
-  .gallary__img {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%; }
+  .gallary__img img {
     display: block;
-    flex: 1; }
-    .gallary__img img {
-      width: 100%;
-      object-fit: cover; }
+    width: 100%;
+    object-fit: cover; }
+
+.hotel__info {
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--gray-light-1);
+  border-bottom: 1px solid var(--gray-light-3); }
+  .hotel__info-title {
+    font-weight: 300;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    margin: 0 3rem; }
+  .hotel__info-stars {
+    /*
+    In order to make location and next divs in the other side
+    we make the stars to occupy the all white-space
+    so that will push all the items next to it to the end 
+    */
+    flex: 1;
+    display: flex;
+    gap: 0.4rem; }
+    .hotel__info-stars .star-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: var(--main-color-med); }
+  .hotel__info-location {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color-med);
+    margin-right: 3rem;
+    font-size: 1.2rem; }
+    .hotel__info-location .location__icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: var(--main-color-med); }
+    .hotel__info-location .location__text {
+      padding-bottom: 0.2rem;
+      border: none;
+      background-color: transparent;
+      display: inline-block;
+      color: currentColor;
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      transition: all 0.2s; }
+    .hotel__info-location .location__text:hover,
+    .hotel__info-location .location__text:active {
+      color: var(--gray-dark-1); }
+    .hotel__info-location .location__text:focus {
+      animation: btn-animate 1s infinite; }
+  .hotel__info-rate {
+    background-color: var(--main-color-med);
+    align-self: stretch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 2rem;
+    color: var(--gray-light-1); }
+    .hotel__info-rate .hotel__rate-avg {
+      font-size: 2rem; }
+    .hotel__info-rate .hotel__rate-num {
+      font-size: 0.8rem;
+      text-transform: uppercase; }
+
+.hotel__details-description {
+  flex: 0 0 60%;
+  background-color: var(--gray-light-1);
+  box-shadow: 0 3rem 10rem rgba(0, 0, 0, 0.1);
+  padding: 3rem; }
+
+.hotel__details-description-title {
+  border-bottom: 1px solid var(--gray-light-3);
+  padding-bottom: 3rem; }
+
+.hotel__details-text {
+  font-size: 1.4rem;
+  color: var(--gray-dark-2); }
+
+.hotel__details-features {
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--gray-light-3); }
+
+.hotel__details-features-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem; }
+
+.hotel__details-features-item {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; }
+
+.hotel__details-features-icon {
+  fill: var(--main-color-med);
+  width: 1.5rem;
+  height: 1.5rem; }
+
+.hotel__details-features-text {
+  font-size: 1.4rem; }
+
+.hotel__details-recommindation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  margin-bottom: 1rem; }
+
+.hotel__details-text {
+  font-size: 1.4rem;
+  color: var(--gray-dark-2); }
+
+.hotel__details-recommindation-gallary {
+  display: flex; }
+
+.hotel__details-recommindation-image {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  border: 3px solid var(--gray-light-1);
+  margin-left: -1.75rem; }
+  .hotel__details-recommindation-image img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; }
+
+.hotel__details-testmonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem; }
+
+.hotel__details-testmonial-box {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--gray-light-1);
+  box-shadow: 0 3rem 10rem rgba(0, 0, 0, 0.1);
+  padding: 3rem; }
+  .hotel__details-testmonial-box::after {
+    position: absolute;
+    top: -3.15rem;
+    left: -0.73rem;
+    content: "\201C";
+    font-family: sans-serif;
+    line-height: 1;
+    font-size: 20rem;
+    color: var(--gray-light-2);
+    z-index: 1; }
+
+.hotel__details .testomonial-text {
+  position: relative;
+  z-index: 99; }
+
+.hotel__details-testmonial-info {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center; }
+  .hotel__details-testmonial-info img {
+    display: block;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.5rem; }
+
+.hotel__details-testmonial-user {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; }
+  .hotel__details-testmonial-user .name {
+    color: var(--gray-dark-1);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.2rem; }
+  .hotel__details-testmonial-user .date {
+    font-size: 1rem;
+    color: var(--gray-dark-3); }
+
+.hotel__details-testmonial-rate {
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--main-color-med); }
+
+.sec-btn:link,
+.sec-btn:visited {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: var(--main-color-med);
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.2rem;
+  transition: color 0.3s; }
+  .sec-btn:link span,
+  .sec-btn:visited span {
+    transition: margin 0.3s;
+    display: inline-block;
+    margin-left: 0.5rem; }
+
+.sec-btn:active,
+.sec-btn:hover {
+  color: var(--gray-dark-1); }
+  .sec-btn:active span,
+  .sec-btn:hover span {
+    margin-left: 0.8rem; }
+
+.cta {
+  background-color: var(--gray-light-1);
+  box-shadow: 0 3rem 10rem rgba(0, 0, 0, 0.1);
+  padding: 3.5rem;
+  text-align: center; }
+  .cta-header {
+    font-weight: 300;
+    font-size: 2rem;
+    color: var(--gray-dark-2);
+    margin-bottom: 3rem;
+    text-transform: uppercase; }
+  .cta-btn {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    color: var(--gray-light-1);
+    background: linear-gradient(to right, var(--main-color-light), var(--main-color-dark));
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 2rem 4rem;
+    border-radius: 100px;
+    text-align: center;
+    cursor: pointer; }
+    .cta-btn-unvis {
+      display: inline-block;
+      transform: translateY(-250%);
+      transition: all 0.3s; }
+    .cta-btn-vis {
+      transition: all 0.3s;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .cta-btn:hover {
+      background: linear-gradient(to left, var(--main-color-light), var(--main-color-dark)); }
+    .cta-btn:hover .cta-btn-unvis {
+      transform: translate(0); }
+    .cta-btn:hover .cta-btn-vis {
+      top: 200%; }

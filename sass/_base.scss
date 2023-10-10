@@ -41,3 +41,21 @@ body {
     var(--main-color-dark)
   );
 }
+
+@keyframes btn-animate {
+  0% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+.padding-bottom-med {
+  padding-bottom: 2rem;
+}

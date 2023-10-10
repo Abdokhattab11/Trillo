@@ -1,7 +1,7 @@
 .container {
   margin: 8rem auto;
   max-width: 120rem;
-  background-color: var(--gray-light-2);
+  background-color: var(--gray-light-1);
   box-shadow: 0 2rem 8rem var(--shadow-dark);
 }
 .header {
@@ -10,10 +10,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid var(--gray-light-3);
 }
 .page-content {
   display: flex;
-  height: 100vh; // temporary
 }
 .sidebar {
   flex: 0 0 18%;
@@ -21,4 +21,9 @@
 }
 .main-content {
   flex: 1; // To take the remaning space of (18%)
+}
+.hotel__details {
+  padding: 4.5rem;
+  display: flex;
+  gap: 4.5rem;
 }
