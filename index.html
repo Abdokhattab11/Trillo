@@ -9,7 +9,7 @@
       rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-
+    <script src="script/script.js" defer></script>
     <title>trillo &mdash; Your all-in-one booking app</title>
   </head>
   <body>
@@ -28,17 +28,53 @@
           </button>
         </form>
         <div class="user">
+          <div class="user__massage-box active-box">
+            <div class="user__massage-title">
+              <h3>Unread Messages</h3>
+              <span class="close-btn"></span>
+            </div>
+            <ul class="user__massages-container">
+              <div class="user__massage-item">
+                <figure class="user__massage-img">
+                  <img src="img/user-1.jpg" alt="user of trillo" />
+                </figure>
+                <div class="user__massage-outline">
+                  <p class="name">Mohammed</p>
+                  <p class="massage">Hi Khattab How are you</p>
+                </div>
+              </div>
+              <div class="user__massage-item">
+                <figure class="user__massage-img">
+                  <img src="img/user-3.jpg" alt="user of trillo" />
+                </figure>
+                <div class="user__massage-outline">
+                  <p class="name">Alaa</p>
+                  <p class="massage">What did you do on the task?</p>
+                </div>
+              </div>
+              <div class="user__massage-item">
+                <figure class="user__massage-img">
+                  <img src="img/user-4.jpg" alt="user of trillo" />
+                </figure>
+                <div class="user__massage-outline">
+                  <p class="name">Ahmed</p>
+                  <p class="massage">Hey Khattab, What's up dude</p>
+                </div>
+              </div>
+            </ul>
+          </div>
+          <div class="user__bookmarks-box"></div>
           <div class="user__icon-box">
             <svg class="user__icon">
               <use xlink:href="img/sprite.svg#icon-bookmark"></use>
             </svg>
             <span class="user__icon-notifaction">13</span>
           </div>
-          <div class="user__icon-box">
+          <div class="user__icon-box user__massage-icon">
             <svg class="user__icon">
               <use xlink:href="img/sprite.svg#icon-bubbles2"></use>
             </svg>
-            <span class="user__icon-notifaction">5</span>
+            <span class="user__icon-notifaction">3</span>
           </div>
           <div class="user__info-box">
             <img src="img/user.jpg" alt="user of trillo" class="user-img" />

@@ -50,6 +50,7 @@
   }
 }
 .user {
+  position: relative;
   display: flex;
   align-self: stretch;
   & > * {
@@ -127,6 +128,7 @@
     }
   }
   .nav__item {
+    backface-visibility: hidden;
     position: relative;
     padding: 1.5rem 3rem;
     &:hover {
@@ -207,7 +209,52 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
+
   &__img {
+    position: relative;
+    overflow: hidden;
+    backface-visibility: hidden;
+    &::before {
+      transition: all 0.5s;
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(100%);
+      background: linear-gradient(
+        to right bottom,
+        rgba(255, 51, 102, 0.3),
+        rgba(186, 38, 92, 0.3)
+      );
+    }
+    &:nth-child(1)::after {
+      content: "parties";
+    }
+    &:nth-child(2)::after {
+      content: "Nice View";
+    }
+    &:nth-child(3)::after {
+      content: "Calm down";
+    }
+    &::after {
+      transition: all 0.5s;
+      position: absolute;
+      top: 150%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+      color: var(--gray-light-1);
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    &:hover::after {
+      top: 50%;
+    }
+    &:hover::before {
+      transform: translate(0);
+    }
     img {
       display: block;
       width: 100%;
@@ -591,5 +638,102 @@
     &:hover &-vis {
       top: 200%;
     }
+  }
+}
+
+// popups
+.active-box.user__massage-box {
+  visibility: visible;
+  opacity: 1;
+}
+.user__massage-box {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+  padding: 0;
+  &:hover {
+    cursor: default;
+    background-color: var(--gray-light-2);
+  }
+  cursor: default;
+  position: absolute;
+  background-color: var(--gray-light-2);
+  width: 33rem;
+  border-radius: 10px;
+  z-index: 999999999;
+  top: 7rem;
+  right: 0;
+  .user__massage-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid var(--gray-dark-2);
+    h3 {
+      font-size: 1.6rem;
+      color: var(--gray-dark-1);
+    }
+    span {
+      cursor: pointer;
+      display: inline-block;
+      // padding: 1rem;
+      width: 30px;
+      height: 30px;
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 15px;
+        height: 3px;
+        background-color: var(--gray-dark-1);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.2s;
+      }
+      &:hover::before {
+        background-color: var(--main-color-med);
+      }
+    }
+  }
+}
+.user__massages-container {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: center;
+  align-items: stretch;
+}
+.user__massage-item {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+.user__massage-item:hover {
+  background-color: var(--gray-light-4);
+}
+.user__massage-img {
+  display: block;
+  img {
+    display: block;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+.user__massage-outline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  .name {
+    font-size: 1.4rem;
+    color: var(--gray-dark-1);
+  }
+  .massage {
+    font-size: 1.2rem;
   }
 }
