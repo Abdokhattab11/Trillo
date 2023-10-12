@@ -1,8 +1,14 @@
 .container {
   margin: 8rem auto;
-  max-width: 120rem;
+  max-width: 1200px;
   background-color: var(--gray-light-1);
   box-shadow: 0 2rem 8rem var(--shadow-dark);
+  @include response-small-laptop {
+    margin: 0;
+  }
+  @include response-large-screen {
+    max-width: 1400px;
+  }
 }
 .header {
   background-color: var(--gray-light-1);
@@ -11,9 +17,16 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--gray-light-3);
+  @include reponse-tap-port {
+    height: 12rem;
+    flex-wrap: wrap;
+  }
 }
 .page-content {
   display: flex;
+  @include reponse-small-laptop-2 {
+    flex-direction: column;
+  }
 }
 .sidebar {
   flex: 0 0 18%;
@@ -26,4 +39,11 @@
   padding: 4.5rem;
   display: flex;
   gap: 4.5rem;
+  @include response-tap-land {
+    padding: 2.5rem;
+    gap: 2.5rem;
+  }
+  @include reponse-tap-port {
+    flex-direction: column;
+  }
 }

@@ -4,11 +4,16 @@
   height: 3.5rem;
   margin-left: 2rem;
 }
+
 .search {
   flex: 0 0 40%;
   display: flex;
   justify-content: center;
   align-items: center;
+  @include reponse-tap-port {
+    order: 1;
+    flex: 0 0 100%;
+  }
   &__input {
     background-color: var(--gray-light-2);
     border: none;
@@ -25,6 +30,12 @@
     &:focus {
       width: 100%;
       background-color: var(--gray-light-3);
+    }
+    @include reponse-tap-port {
+      width: 80%;
+      &:focus {
+        width: 90%;
+      }
     }
   }
 
@@ -72,6 +83,10 @@
     color: var(--gray-light-1);
     top: 1.5rem;
     right: 1.2rem;
+    @include reponse-tap-port {
+      top: 1.2rem;
+      right: 1.2rem;
+    }
   }
   &__info-box {
     display: flex;
@@ -96,7 +111,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   .nav__list {
     list-style: none;
     display: flex;
@@ -106,12 +120,21 @@
     .active {
       background-color: var(--main-color-med);
     }
+    @include reponse-small-laptop-2 {
+      flex-direction: row;
+      margin-top: 0;
+      gap: 0;
+    }
   }
   .nav__item {
     position: relative;
     padding: 1.5rem 3rem;
     &:hover {
       cursor: pointer;
+    }
+    @include reponse-small-laptop-2 {
+      flex: 1;
+      padding: 2rem;
     }
   }
   .nav__item::before {
@@ -146,6 +169,19 @@
     span {
       font-size: 1.4rem;
       text-transform: uppercase;
+      @include reponse-mobile {
+        display: none;
+      }
+    }
+    @include reponse-small-laptop-2 {
+      justify-content: center;
+    }
+    @include reponse-tap-port {
+      flex-direction: column;
+      gap: 0.8rem;
+      span {
+        font-size: 1.3rem;
+      }
     }
   }
   .nav__icon {
@@ -160,6 +196,9 @@
     margin-bottom: 3rem;
     color: var(--gray-light-4);
     font-size: 1.2rem;
+    @include reponse-small-laptop-2 {
+      display: none;
+    }
   }
 }
 //////////////////////////////////////////////////////////////////////
@@ -185,11 +224,28 @@
   align-items: center;
   background-color: var(--gray-light-1);
   border-bottom: 1px solid var(--gray-light-3);
+  @include reponse-tap-port {
+    justify-content: space-between;
+  }
+  @include reponse-mobile {
+    flex-wrap: wrap;
+    height: 10rem;
+    row-gap: 0.5rem;
+    margin: 0 1.5rem;
+  }
   &-title {
     font-weight: 300;
     font-size: 2.4rem;
     text-transform: uppercase;
     margin: 0 3rem;
+    @include reponse-tap-port {
+      font-size: 2.2rem;
+    }
+    @include reponse-mobile {
+      font-size: 2rem;
+      margin: 0;
+      width: 70%;
+    }
   }
   &-stars {
     /*
@@ -205,6 +261,12 @@
       height: 1.5rem;
       fill: var(--main-color-med);
     }
+    @include reponse-tap-port {
+      flex: 0;
+    }
+    @include reponse-mobile {
+      width: 30%;
+    }
   }
   &-location {
     display: flex;
@@ -214,6 +276,13 @@
     color: var(--main-color-med);
     margin-right: 3rem;
     font-size: 1.2rem;
+    @include reponse-tap-port {
+      margin-right: 0rem;
+      font-size: 1rem;
+    }
+    @include reponse-mobile {
+      font-size: 1.2rem;
+    }
     .location__icon {
       width: 1.5rem;
       height: 1.5rem;
@@ -228,6 +297,7 @@
       text-decoration: none;
       border-bottom: 1px solid currentColor;
       transition: all 0.2s;
+      font-size: inherit;
     }
     .location__text:hover,
     .location__text:active {
@@ -281,12 +351,22 @@
     display: flex;
     flex-wrap: wrap;
     row-gap: 1rem;
+    justify-content: space-between;
+    @include reponse-mobile {
+      flex-direction: column;
+    }
   }
   &-features-item {
     width: 50%;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    @include response-tap-land {
+      width: 50%;
+    }
+    @include reponse-mobile {
+      width: 100%;
+    }
   }
   &-features-icon {
     fill: var(--main-color-med);
@@ -302,6 +382,23 @@
     align-items: center;
     padding-top: 3rem;
     margin-bottom: 1rem;
+    @include response-small-laptop {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: start;
+    }
+    @include reponse-tap-port {
+      flex-direction: row;
+      align-items: center;
+      gap: 0;
+    }
+    @include reponse-mobile {
+      flex-direction: column;
+      gap: 1.5rem;
+      .hotel__details-text {
+        text-align: center;
+      }
+    }
   }
   &-text {
     font-size: 1.4rem;
@@ -310,15 +407,15 @@
   &-recommindation-gallary {
     display: flex;
   }
-
   &-recommindation-image {
     width: 4.5rem;
     height: 4.5rem;
     border-radius: 50%;
     border: 3px solid var(--gray-light-1);
 
-    margin-left: -1.75rem;
-
+    &:not(:first-child) {
+      margin-left: -1.75rem;
+    }
     img {
       border-radius: 50%;
       width: 100%;
@@ -332,6 +429,20 @@
     flex-direction: column;
     align-items: center;
     gap: 3.5rem;
+    @include response-tap-land {
+      gap: 2.5rem;
+    }
+    @include response-tap-land {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+    }
+    @include reponse-mobile {
+      flex-direction: column;
+      align-items: center;
+      justify-content: stretch;
+    }
   }
   &-testmonial-box {
     overflow: hidden;
@@ -349,6 +460,14 @@
       font-size: 20rem;
       color: var(--gray-light-2);
       z-index: 1;
+    }
+    @include reponse-tap-port {
+      max-width: calc(
+        50% - 1.25rem
+      ); // Gap is 2.5rem, and we have to consider that
+    }
+    @include reponse-mobile {
+      max-width: 100%;
     }
   }
   .testomonial-text {
@@ -424,6 +543,9 @@
     color: var(--gray-dark-2);
     margin-bottom: 3rem;
     text-transform: uppercase;
+    @include reponse-mobile {
+      font-size: 1.6rem;
+    }
   }
   &-btn {
     position: relative;

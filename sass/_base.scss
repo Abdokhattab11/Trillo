@@ -1,3 +1,34 @@
+@mixin response-large-screen {
+  @media only screen and (min-width: 112.5em) {
+    @content;
+  }
+}
+@mixin response-small-laptop {
+  @media only screen and (max-width: 75em) {
+    @content;
+  }
+}
+@mixin reponse-small-laptop-2 {
+  @media only screen and (max-width: 68.75em) {
+    @content;
+  }
+}
+@mixin response-tap-land {
+  @media only screen and (max-width: 58.125em) {
+    @content;
+  }
+}
+@mixin reponse-tap-port {
+  @media only screen and (max-width: 40.625em) {
+    @content;
+  }
+}
+@mixin reponse-mobile {
+  @media only screen and (max-width: 31.875em) {
+    @content;
+  }
+}
+
 :root {
   --main-color-med: #eb2f64;
   --main-color-light: #ff3366;
@@ -28,6 +59,12 @@
 }
 html {
   font-size: 62.5%;
+  @include response-large-screen {
+    font-size: 75%;
+  }
+  @include response-tap-land {
+    font-size: 56.25%;
+  }
 }
 body {
   min-height: 100vh;
