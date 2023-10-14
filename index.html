@@ -9,8 +9,8 @@
       rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-    <script src="script/script.js" defer></script>
     <title>trillo &mdash; Your all-in-one booking app</title>
+    <script src="script/script.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -28,7 +28,7 @@
           </button>
         </form>
         <div class="user">
-          <div class="user__massage-box active-box">
+          <div class="user__massage-box">
             <div class="user__massage-title">
               <h3>Unread Messages</h3>
               <span class="close-btn"></span>
@@ -63,12 +63,61 @@
               </div>
             </ul>
           </div>
-          <div class="user__bookmarks-box"></div>
-          <div class="user__icon-box">
+          <div class="user__bookmark-box">
+            <div class="user__bookmark-title">
+              <h3>Bookmarks</h3>
+              <span class="close-btn-bookmark"></span>
+            </div>
+            <ul class="user__bookmark-container">
+              <div class="user__bookmark-item">
+                <div class="user__bookmark-outline">
+                  <p class="name">How to learn JavaScript</p>
+                  <p class="massage">By Ahmed mohamed</p>
+                </div>
+              </div>
+              <div class="user__bookmark-item">
+                <div class="user__bookmark-outline">
+                  <p class="name">Web Frameworks</p>
+                  <p class="massage">By Mohamed Elsahy</p>
+                </div>
+              </div>
+              <div class="user__bookmark-item">
+                <div class="user__bookmark-outline">
+                  <p class="name">React FrameWork</p>
+                  <p class="massage">By Abdo Khattab</p>
+                </div>
+              </div>
+              <div class="user__bookmark-item">
+                <div class="user__bookmark-outline">
+                  <p class="name">Node.js</p>
+                  <p class="massage">By abdallah mohamed</p>
+                </div>
+              </div>
+              <div class="user__bookmark-item">
+                <div class="user__bookmark-outline">
+                  <p class="name">What's is HTTPS ?</p>
+                  <p class="massage">By Ahmed Elmemam</p>
+                </div>
+              </div>
+              <div class="user__bookmark-item">
+                <div class="user__bookmark-outline">
+                  <p class="name">Vue.js</p>
+                  <p class="massage">By Khattab</p>
+                </div>
+              </div>
+              <div class="user__bookmark-item">
+                <div class="user__bookmark-outline">
+                  <p class="name">Network</p>
+                  <p class="massage">By Hussien</p>
+                </div>
+              </div>
+            </ul>
+          </div>
+          <div class="user__icon-box user__bookmark-icon">
             <svg class="user__icon">
               <use xlink:href="img/sprite.svg#icon-bookmark"></use>
             </svg>
-            <span class="user__icon-notifaction">13</span>
+            <span class="user__icon-notifaction">7</span>
           </div>
           <div class="user__icon-box user__massage-icon">
             <svg class="user__icon">

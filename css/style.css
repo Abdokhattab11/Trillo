@@ -662,7 +662,12 @@ body {
   visibility: visible;
   opacity: 1; }
 
-.user__massage-box {
+.active-box.user__bookmark-box {
+  visibility: visible;
+  opacity: 1; }
+
+.user__massage-box,
+.user__bookmark-box {
   visibility: hidden;
   opacity: 0;
   transition: all 0.3s;
@@ -675,38 +680,48 @@ body {
   z-index: 999999999;
   top: 7rem;
   right: 0; }
-  .user__massage-box:hover {
+  .user__massage-box:hover,
+  .user__bookmark-box:hover {
     cursor: default;
     background-color: var(--gray-light-2); }
-  .user__massage-box .user__massage-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid var(--gray-dark-2); }
-    .user__massage-box .user__massage-title h3 {
-      font-size: 1.6rem;
-      color: var(--gray-dark-1); }
-    .user__massage-box .user__massage-title span {
-      cursor: pointer;
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-      position: relative; }
-      .user__massage-box .user__massage-title span::before {
-        position: absolute;
-        content: "";
-        width: 15px;
-        height: 3px;
-        background-color: var(--gray-dark-1);
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        transition: all 0.2s; }
-      .user__massage-box .user__massage-title span:hover::before {
-        background-color: var(--main-color-med); }
 
-.user__massages-container {
+.user__massage-title,
+.user__bookmark-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--gray-dark-2); }
+  .user__massage-title h3,
+  .user__bookmark-title h3 {
+    font-size: 1.6rem;
+    color: var(--gray-dark-1); }
+  .user__massage-title span,
+  .user__bookmark-title span {
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative; }
+    .user__massage-title span::before,
+    .user__bookmark-title span::before {
+      position: absolute;
+      content: "";
+      width: 15px;
+      height: 3px;
+      background-color: var(--gray-dark-1);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.2s; }
+    .user__massage-title span:hover::before,
+    .user__bookmark-title span:hover::before {
+      background-color: var(--main-color-med); }
+
+.user__massages-container,
+.user__bookmark-container {
+  height: 25rem;
+  overflow-y: scroll;
   padding: 2rem 0;
   display: flex;
   flex-direction: column;
@@ -716,7 +731,6 @@ body {
 
 .user__massage-item {
   cursor: pointer;
-  padding: 1rem 2rem;
   padding: 1rem;
   display: flex;
   gap: 1rem; }
@@ -742,3 +756,25 @@ body {
     color: var(--gray-dark-1); }
   .user__massage-outline .massage {
     font-size: 1.2rem; }
+
+.user__bookmark-container {
+  height: 25rem;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  overflow-y: scroll;
+  gap: 1rem; }
+
+.user__bookmark-item {
+  cursor: pointer;
+  padding: 1rem 2rem; }
+  .user__bookmark-item:hover {
+    background-color: var(--gray-light-4); }
+
+.user__bookmark-outline {
+  display: flex;
+  flex-direction: column; }
+  .user__bookmark-outline .name {
+    font-size: 1.6rem;
+    color: var(--gray-dark-1); }
