@@ -21,3 +21,6 @@ bookmarkIcon.addEventListener("click", () => {
 closeMassageBox.addEventListener("click", () => {
   massageBox.classList.toggle("active-box");
 });
+closeBookmarkBox.addEventListener("click", () => {
+  bookmarkBox.classList.toggle("active-box");
+});
